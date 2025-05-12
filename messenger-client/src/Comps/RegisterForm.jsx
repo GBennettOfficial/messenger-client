@@ -1,6 +1,12 @@
 import React from 'react'
 
 const RegisterForm = ({ setCurrentForm }) => {
+
+    const changeForm = (form) => {
+        setCurrentForm(form)
+        setErrorMessage('')
+    }
+
     return (
         <div className='d-flex flex-column justify-content-start align-items-center'>
             <h1 className="mt-5">Register</h1>
@@ -12,7 +18,7 @@ const RegisterForm = ({ setCurrentForm }) => {
             <input type="password" className='form-control mt-2' placeholder='Password' />
             <input type="password" className='form-control mt-2' placeholder='Confirm Password' />
             <button className='btn btn-primary mt-3' style={{ 'width': '75%' }}>Register</button>
-            <span className='mt-1'>Already have an account? Login <a className='text-link' onClick={() => setCurrentForm('login')}>here</a>.</span>
+            <span className='mt-1'>Already have an account? Login <a className='text-link' onClick={() => changeForm('login')}>here</a>.</span>
         </div>
     )
 }
